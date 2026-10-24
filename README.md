@@ -78,10 +78,10 @@ Data is freely available upon request. Please submit your request via [Google Fo
 If you use OCTA-60 in your research, please cite our paper:
 
 ```bibtex
-@inproceedings{li2026crossmodal,
+@inproceedings{li2026cross,
   title={Cross-Modal Fundus Image Registration Under Large FoV Disparity},
   author={Li, Hongyang and Tao, Junyi and Wei, Qijie and Yang, Ningzhi and Wang, Meng and Yu, Weihong and Li, Xirong},
-  booktitle={MultiMedia Modeling},
+  booktitle={International Conference on Multimedia Modeling},
   pages={321--334},
   year={2026},
   organization={Springer}
