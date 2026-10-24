@@ -1,13 +1,13 @@
 # OCTA-60
 
-OCTA-60 is a retinal image dataset for evaluating cross-modal registration between optical coherence tomography angiography (OCTA) and wide-field color fundus photography (wfCFP) under large field-of-view (FoV) disparity. See our [MMM 2026 paper](https://link.springer.com/chapter/10.1007/978-981-95-6950-2_23) for details.
+OCTA-60 is a fundus image dataset for evaluating cross-modal registration between optical coherence tomography angiography (OCTA) and wide-field color fundus photography (wfCFP) under large field-of-view (FoV) disparity. See our [MMM 2026 paper](https://link.springer.com/chapter/10.1007/978-981-95-6950-2_23) for details.
 
 ## Highlights
 
 - **60 OCTA–wfCFP image pairs**, comprising 120 PNG images.
 - **653 manually annotated point correspondences**, with 10–16 correspondences per image pair (10.88 on average).
 - **Large FoV disparity** between OCTA (FoV ~ 40°) and wfCFP (FoV ~ 90°) images, presenting challenges in scale, coverage, and cross-modal appearance.
-- **Registration benchmark** for evaluating cross-modal retinal image alignment using manually annotated correspondences.
+- **Registration benchmark** for evaluating cross-modal fundus image registration using manually annotated correspondences.
 
 ## Dataset Organization
 
