@@ -1,6 +1,6 @@
 # OCTA-60
 
-OCTA-60 is a fundus image dataset for evaluating cross-modal registration between optical coherence tomography angiography (OCTA) and wide-field color fundus photography (wfCFP) under large field-of-view (FoV) disparity. See our [MMM 2026 paper](https://arxiv.org/pdf/2512.12657) for details.
+OCTA-60 is a fundus image dataset for evaluating cross-modal registration between optical coherence tomography angiography (OCTA) and wide-field color fundus photography (wfCFP) under large field-of-view (FoV) disparity. See our [MMM 2026 paper](https://arxiv.org/abs/2512.12657) for details.
 
 ## Highlights
 
