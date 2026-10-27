@@ -66,9 +66,9 @@ If everything is in place, you will see
 MEE: XXX pixels
 MAE: XXX pixels
 Failed rate: 0
-Inaccurate rate: 0
-Acceptable rate: 0.60 
-AUC@25: 0.928000
+Inaccurate rate: 0.05
+Acceptable rate: 0.95
+AUC@25: 0.758
 ```
 
 ## Preparing your JSON file
