@@ -63,8 +63,6 @@ python eval.py CARe.json
 ```
 If everything is in place, you will see
 ```text
-MEE: XXX pixels
-MAE: XXX pixels
 Failed rate: 0
 Inaccurate rate: 0.05
 Acceptable rate: 0.95
