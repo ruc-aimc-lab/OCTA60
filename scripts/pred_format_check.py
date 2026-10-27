@@ -66,7 +66,7 @@ class PredictionFormatChecker:
             predictions[image_id] = points
         return predictions
 
-    def _check_predictio_points_format(self, image_id, predicted_points, expected_count):
+    def _check_prediction_points_format(self, image_id, predicted_points, expected_count):
         if not isinstance(predicted_points, list):
             self._error(f"Image ID {repr(image_id)}", "Format Error", "The predicted point lists must be a JSON array.")
             return None
@@ -107,7 +107,7 @@ class PredictionFormatChecker:
             return self._print_result()
 
         for image_id, count in point_pairs_counts.items():
-            self._check_predictio_points_format(image_id, predictions[image_id], count)
+            self._check_prediction_points_format(image_id, predictions[image_id], count)
         if self.errors:
             return self._print_result()
 
