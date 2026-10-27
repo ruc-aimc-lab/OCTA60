@@ -112,7 +112,7 @@ The following excerpt shows the transformed points for image ID `001` and marks 
 Run the checker before evaluation:
 
 ```bash
-python scripts/pred_format_check.py WrappedSourcePoints/CARe.json
+python pred_format_check.py WrappedSourcePoints/CARe.json
 ```
 
 If the format is valid, you can see:
@@ -134,7 +134,7 @@ FAIL: 1 error(s) found.
 Run the following command to evaluate the prediction file:
 
 ```bash
-python scripts/evaluate.py WrappedSourcePoints/CARe.json
+python evaluate.py WrappedSourcePoints/CARe.json
 ```
 
 The metrics follow the [MMM 2026 paper](https://arxiv.org/html/2512.12657v1):
