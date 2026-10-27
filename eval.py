@@ -41,9 +41,9 @@ def print_eval_res(results):
     total_pairs = results["total_pairs"]
     for status in ("failed", "inaccurate", "acceptable"):
         count = results[status]
-        percentage = 100 * count / total_pairs
-        print(f"{status.capitalize()}: {count} ({percentage:.2f}%)")
-    print(f"AUC@25: {results['auc25']:.6f}")
+        rate = count / total_pairs
+        print(f"{status.capitalize()} rate: {rate:.2f}")
+    print(f"AUC@25: {results['auc25']:.3f}")
 
 
 class OCTA60:
