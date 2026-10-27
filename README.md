@@ -105,9 +105,9 @@ The state-of-the-art on OCTA60:
 
 | Algorithm | AUC@25 |
 |-----------|-------:|
-| CARe      |  0.xxx |
-| A         |  0.xxx |
-| B         |  0.XXX |
+| CARe      |  0.758 |
+| [MINIMA](https://ieeexplore.ieee.org/abstract/document/11094727)         |  0.731 |
+| [MatchAnything](https://arxiv.org/abs/2501.07556)         |  0.703 |
 
 
 
