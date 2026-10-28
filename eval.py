@@ -4,7 +4,7 @@ import json
 import math
 import statistics
 import os
-
+from pathlib import Path
 
 
 MEE_THRESHOLD = 20
@@ -22,17 +22,17 @@ def calculate_pair_errors(target_points, predicted_points):
         else:
             dist = math.hypot(predicted[0] - target[0], predicted[1] - target[1])
         errors.append(dist)
-    return statistics.median(errors), max(errors)
+    return statistics.median(errors), max(errors), statistics.mean(errors)
 
 
-def calculate_auc(median_errors):
+def calculate_auc(mean_errors):
     success_rates = []
     for threshold in range(1, AUC_MAX_THRESHOLD + 1):
         successful_pairs = 0
-        for median_error in median_errors:
-            if median_error < threshold:
+        for mean_error in mean_errors:
+            if mean_error < threshold:
                 successful_pairs += 1
-        success_rate = successful_pairs / len(median_errors)
+        success_rate = successful_pairs / len(mean_errors)
         success_rates.append(success_rate)
     return statistics.mean(success_rates)
 
@@ -71,16 +71,16 @@ class OCTA60:
         failed_count = 0
         inaccurate_count = 0
         acceptable_count = 0
-        median_errors = []
+        mean_errors = []
 
         for i,img_id in enumerate(self.imset):
             predicted_points = predictions.get(img_id)
             if len(predicted_points) == 0:
                 failed_count += 1
-                median_errors.append(math.inf)
+                mean_errors.append(math.inf)
                 continue
-            median_error, maximum_error = calculate_pair_errors(self.target_points[i],  [(p[0] * IMG_SIZE, p[1] * IMG_SIZE) if p else () for p in predicted_points])
-            median_errors.append(median_error)
+            median_error, maximum_error, mean_error = calculate_pair_errors(self.target_points[i],  [(p[0] * IMG_SIZE, p[1] * IMG_SIZE) if p else () for p in predicted_points])
+            mean_errors.append(mean_error)
 
             if median_error < MEE_THRESHOLD and maximum_error < MAE_THRESHOLD:
                 acceptable_count += 1
@@ -92,7 +92,7 @@ class OCTA60:
             "failed": failed_count,
             "inaccurate": inaccurate_count,
             "acceptable": acceptable_count,
-            "auc25": calculate_auc(median_errors),
+            "auc25": calculate_auc(mean_errors),
         }
 
     def run(self, pred_file):
