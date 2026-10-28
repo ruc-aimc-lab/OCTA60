@@ -69,7 +69,7 @@ If everything is in place, you will see
 Failed rate: 0.00
 Inaccurate rate: 0.05
 Acceptable rate: 0.95
-AUC@25: 0.758
+AUC@25: 0.725
 ```
 Note that the pixel-wise thresholds for determining image registration errors are image-size dependent. With the thresholds fixed, smaller input yields "better" performance. To be in line with the widely used [FIRE](https://www.aivojournal.com/index.php/AIVO/article/view/42) evaluation protocol, we use an input size of [2912*2912](https://github.com/ruc-aimc-lab/OCTA60/blob/main/eval.py#L13), an [MEE threshold](https://github.com/ruc-aimc-lab/OCTA60/blob/main/eval.py#L10) of 20 pixels, and an [MAE threshold](https://github.com/ruc-aimc-lab/OCTA60/blob/main/eval.py#L11) of 50 pixels.
 
@@ -104,7 +104,7 @@ The state-of-the-art on OCTA60:
 
 | Algorithm | AUC@25 |
 |-----------|-------:|
-| [CARe](https://arxiv.org/abs/2512.12657)      |  0.758 |
+| [CARe](https://arxiv.org/abs/2512.12657)      |  0.725 |
 | [MINIMA](https://ieeexplore.ieee.org/abstract/document/11094727)         |  0.731 |
 | [MatchAnything](https://arxiv.org/abs/2501.07556)         |  0.703 |
 
