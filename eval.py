@@ -48,16 +48,18 @@ def print_eval_res(results):
 
 class OCTA60:
     def __init__(self, data_path='./'):
+        # data_path is the parent directory of the dataset collection.
         self.data_path = data_path
+        self.collection = 'OCTA60_512x512'
         self.version = 'mmm26'
-        imset_file = os.path.join(self.data_path, 'ImageSets', 'OCTA60.txt')
+        imset_file = os.path.join(self.data_path, self.collection, 'ImageSets', 'OCTA60.txt')
         self.imset = [x.strip() for x in open(imset_file).readlines() if x.strip()]
         self.target_points = [None]*len(self.imset)
         for i,img_id in enumerate(self.imset):
             self.target_points[i] = self._read_target_points(img_id)
 
     def _read_target_points(self, img_id):
-        anno_file = os.path.join(self.data_path, 'Annotations', self.version, f'{img_id}.txt')
+        anno_file = os.path.join(self.data_path, self.collection, 'Annotations', self.version, f'{img_id}.txt')
         target_points = []
         for line in open(anno_file):
             columns = line.split()
@@ -107,8 +109,13 @@ if __name__ == "__main__":
         "pred_file", type=Path,
         help="prediction made by your method in JSON format, see CARe.json",
     )
+    parser.add_argument(
+        "--data_path", "--data-path", type=Path,
+        default=Path(__file__).resolve().parent,
+        help="parent directory containing OCTA60_512x512 (default: directory of eval.py)",
+    )
     args = parser.parse_args()
 
-    eval = OCTA60()
+    eval = OCTA60(data_path=args.data_path)
     results = eval.run(args.pred_file)
     print_eval_res(results)
