@@ -10,14 +10,14 @@ OCTA60 is a research dataset jointly developed by RUC and PUMCH, dedicated to ev
 
 ## Data
 
-The dataset is freely available upon request. Please submit your request via [Google Form](https://forms.gle/sXWc7bkPbewQMtfC8). The request review may take one week or so.
+The dataset (image resolution 512*512) is freely available upon request. Please submit your request via [Google Form](https://forms.gle/sXWc7bkPbewQMtfC8). The request review may take one week or so.
 
 ### Dataset Organization
 
 Image IDs range from `001` to `060`. The OCTA, wfCFP images, their vessel maps (extracted by the [DCP](https://github.com/ruc-aimc-lab/dcp) algorithm) and point annotations are uniquely accessed via the image IDs, see below.
 
 ```text
-OCTA60/
+OCTA60_512x512/
 ├── Annotations/
 │   └── mmm26/
 │       ├── 001.txt
@@ -44,7 +44,7 @@ OCTA60/
 
 ### Annotations
 
-Each text file in the `Annotations` folder records a list of manually labeled correspondence points. The current version is `mmm26`, as used in our [CARe](https://arxiv.org/abs/2512.12657) method published in MMM'26.
+Each text file in the `Annotations` folder records a list of manually labeled correspondence points. The current version is `mmm26`, as used by our [CARe](https://arxiv.org/abs/2512.12657) method published in MMM'26.
 
 ```text
 # x_OCTA  y_OCTA  x_wfCFP  y_wfCFP
@@ -100,7 +100,7 @@ python check_format.py yours.json
 ```
 ### Leaderboard
 
-The state-of-the-art on OCTA60:
+The state-of-the-art on OCTA60 under varied resolutions, measured by [AUC](https://github.com/ruc-aimc-lab/OCTA60/blob/b2a27993310f430afc4b58b6988f7003ff567d5a/eval.py#L95):
 
 | Algorithm | 1000\*1000 | 512\*512 |
 |-----------|------------|-------:|
