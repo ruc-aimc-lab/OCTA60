@@ -102,11 +102,11 @@ python check_format.py yours.json
 
 The state-of-the-art on OCTA60:
 
-| Algorithm | AUC@25 |
-|-----------|-------:|
-| [CARe](https://arxiv.org/abs/2512.12657)      |  0.725 |
-| [MINIMA](https://ieeexplore.ieee.org/abstract/document/11094727)         |  0.719 |
-| [MatchAnything](https://arxiv.org/abs/2501.07556)         |  0.703 |
+| Algorithm | 1000\*1000 | 512\*512 |
+|-----------|------------|-------:|
+| [CARe](https://arxiv.org/abs/2512.12657)      |  0.725 | 0.705 |
+| [MINIMA](https://ieeexplore.ieee.org/abstract/document/11094727)         |  0.719 | 0.705 |
+| [MatchAnything](https://arxiv.org/abs/2501.07556)         |  0.703 | 0.685 |
 
 
 
