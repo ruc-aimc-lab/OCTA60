@@ -100,7 +100,7 @@ python check_format.py yours.json
 ```
 ### Leaderboard
 
-The state-of-the-art on OCTA60 under varied resolutions, measured by [AUC](https://github.com/ruc-aimc-lab/OCTA60/blob/b2a27993310f430afc4b58b6988f7003ff567d5a/eval.py#L95):
+The state-of-the-art on OCTA60 under varied resolutions, measured by [AUC](https://github.com/ruc-aimc-lab/OCTA60/blob/main/eval.py#L97):
 
 | Algorithm | 1000\*1000 | 512\*512 |
 |-----------|------------|-------:|
